@@ -14,7 +14,7 @@ class OutputRunnerTest < Test::Unit::TestCase
     end
     
     should "output the runner using that path" do
-      assert_match two_hours + ' cd /my/path && script/runner -e production "blahblah"', @output
+      assert_match two_hours + ' cd /my/path && script/rails runner -e production "blahblah"', @output
     end
   end
   
@@ -30,7 +30,7 @@ class OutputRunnerTest < Test::Unit::TestCase
     end
     
     should "output the runner using that path" do
-      assert_match two_hours + ' cd /some/other/path && script/runner -e production "blahblah"', @output
+      assert_match two_hours + ' cd /some/other/path && script/rails runner -e production "blahblah"', @output
     end
   end
   
@@ -47,7 +47,7 @@ class OutputRunnerTest < Test::Unit::TestCase
     end
     
     should "output the runner using that path" do
-      assert_match two_hours + ' cd /my/path && script/runner -e production "blahblah"', @output
+      assert_match two_hours + ' cd /my/path && script/rails runner -e production "blahblah"', @output
     end
   end
   
@@ -65,7 +65,7 @@ class OutputRunnerTest < Test::Unit::TestCase
     end
     
     should "use the path" do
-      assert_match two_hours + ' cd /my/path && script/runner -e production "blahblah"', @output
+      assert_match two_hours + ' cd /my/path && script/rails runner -e production "blahblah"', @output
       assert_no_match /\/rails\/path/, @output
     end
   end
@@ -83,7 +83,7 @@ class OutputRunnerTest < Test::Unit::TestCase
     end
     
     should "output the runner using that environment" do
-      assert_match two_hours + ' cd /my/path && script/runner -e silly "blahblah"', @output
+      assert_match two_hours + ' cd /my/path && script/rails runner -e silly "blahblah"', @output
     end
   end
   
@@ -100,7 +100,7 @@ class OutputRunnerTest < Test::Unit::TestCase
     end
     
     should "output the runner using that environment" do
-      assert_match two_hours + ' cd /my/path && script/runner -e serious "blahblah"', @output
+      assert_match two_hours + ' cd /my/path && script/rails runner -e serious "blahblah"', @output
     end
   end
   
@@ -117,7 +117,7 @@ class OutputRunnerTest < Test::Unit::TestCase
     end
     
     should "output the runner using the override environment" do
-      assert_match two_hours + ' cd /my/path && script/runner -e serious "blahblah"', @output
+      assert_match two_hours + ' cd /my/path && script/rails runner -e serious "blahblah"', @output
     end
   end
   
@@ -134,7 +134,7 @@ class OutputRunnerTest < Test::Unit::TestCase
     end
     
     should "output the runner using the overridden path and environment" do
-      assert_match two_hours + ' cd /serious/path && script/runner -e serious "blahblah"', @output
+      assert_match two_hours + ' cd /serious/path && script/rails runner -e serious "blahblah"', @output
     end
   end
   
@@ -151,7 +151,7 @@ class OutputRunnerTest < Test::Unit::TestCase
     end
     
     should "output the runner using the overridden path and environment" do
-      assert_match two_hours + ' cd /serious/path && script/runner -e serious "blahblah"', @output
+      assert_match two_hours + ' cd /serious/path && script/rails runner -e serious "blahblah"', @output
     end
   end
   
@@ -168,7 +168,7 @@ class OutputRunnerTest < Test::Unit::TestCase
     end
     
     should "output the runner using the original environmnet" do
-      assert_match two_hours + ' cd /silly/path && script/runner -e silly "blahblah"', @output
+      assert_match two_hours + ' cd /silly/path && script/rails runner -e silly "blahblah"', @output
     end
   end
   
